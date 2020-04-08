@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'kht';
+  src: url('./iconfont.ttf') format('truetype');
+}
+
+.kht {
+  font-family: "kht" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.kht-weixin:before {
+  content: "\e63d";
+}
+
+.kht-Alipay:before {
+  content: "\e6ec";
+}
+
+.kht-arrow:before {
+  content: "\e632";
+}
+
+.kht-calendar-o:before {
+  content: "\e633";
+}
+
+.kht-WeChat:before {
+  content: "\e635";
+}
+
+.kht-no-checked:before {
+  content: "\e634";
+}
+
+.kht-checked:before {
+  content: "\e636";
+}
+
+.kht-add-o:before {
+  content: "\e637";
+}
+
+.kht-delete-o:before {
+  content: "\e638";
+}
+
+.kht-top-o:before {
+  content: "\e604";
+}
+
+.kht-down-o:before {
+  content: "\e646";
+}
+
+.kht-close-o:before {
+  content: "\e647";
+}
+
+.kht-counter-o:before {
+  content: "\e648";
+}
+
+.kht-question:before {
+  content: "\e649";
+}
+
+.kht-answer:before {
+  content: "\e64a";
+}
+
+.kht-down-origin:before {
+  content: "\e64b";
+}

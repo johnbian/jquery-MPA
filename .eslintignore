@@ -1,0 +1,5 @@
+/webpack.*.js
+/server.js
+/src/assets/js/*.js
+/src/pages/**/anysignWebInterface.js
+/src/pages/anysignpage/**/

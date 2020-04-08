@@ -1,0 +1,94 @@
+@import '../../assets/iconfont/iconfont.scss';
+@import './dialog.css';
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+ul,li {
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+img {
+  content: normal !important;
+}
+p, h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.dialog-content-bd {
+  color: #030303;
+}
+.dialog-content * {
+  font-size: 34px;
+}
+
+.font-size-{
+  &16 {
+    font-size: 16px;
+  }
+  &20 {
+    font-size: 20px;
+  }
+  &24 {
+    font-size: 24px;
+  }
+  &26 {
+    font-size: 26px;
+  }
+  &28 {
+    font-size: 28px;
+  }
+  &32 {
+    font-size: 32px;
+  }
+  &36 {
+    font-size: 36px;
+  }
+  &40 {
+    font-size: 40px;
+  }
+  &48 {
+    font-size: 48px;
+  }
+}
+
+.font-color-{
+  &333 {
+    color: #333333;
+  }
+  &ccc {
+    color: #ccc;
+  }
+  &999 {
+    color: #999;
+  }
+  &9B9 {
+    color: #9b9b9b
+  }
+  &D120 {
+    color: #D1202A;
+  }
+  &grey {
+    color: #666666;
+  }
+  &drepGrey {
+    color: #20253C;
+  }
+  &white {
+    color: #fff;
+  }
+  &E75 {
+    color: #E75123;
+  }
+  &FF9 {
+    color: #FF9C0F;
+  }
+  &47C {
+    color: #47C172;
+  }
+}
