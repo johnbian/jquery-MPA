@@ -1,7 +1,7 @@
 {
-  "name": "<%= projectName %>",
+  "name": "activity-2020",
   "version": "1.0.0",
-  "description": "<%= description %>",
+  "description": "tpt activity",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -54,6 +54,7 @@
     "xml-loader": "^1.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "babel-eslint": "^10.0.3",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",

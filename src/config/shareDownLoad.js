@@ -6,6 +6,7 @@ import '../pages/style/downloadInwx.scss';
 
 require('../assets/js/gt.js');
 
+// eslint-disable-next-line func-names
 (function () {
 	// eslint-disable-next-line global-require
 	const logoImg = require('../assets/images/logo.png');

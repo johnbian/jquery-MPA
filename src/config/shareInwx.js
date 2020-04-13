@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import fetch from './fetch';
 import config from './config';
 
@@ -46,6 +47,7 @@ export default function shareInwx(wxCommonShareInfo) {
 
 			// eslint-disable-next-line prefer-arrow-callback
 			wx.error(function (errMsg) {
+				// eslint-disable-next-line no-console
 				console.log(errMsg);
 			});
 		}

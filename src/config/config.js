@@ -45,8 +45,6 @@ export default {
 	isAndroidXZ,
 	isiOSXZ,
 	isWeixin,
-	cleanCarUrl,
-	driversLicenseUrl,
 	shenceUrl,
 	isKhtAPP,
 };
