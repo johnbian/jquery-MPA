@@ -10,7 +10,6 @@ let loading;
 let loadingNumber = 0;
 
 class Fetch {
-	// eslint-disable-next-line class-methods-use-this
 	post(params) {
 		return new Promise((resolve, reject) => {
 			if (loadingNumber < 1 && !params.noLoading) {
@@ -32,50 +31,15 @@ class Fetch {
 				},
 				data: JSON.stringify(params.data),
 				success(res) {
-					if (config.responseCode.businessError.indexOf(res.code) !== -1) {
-						if (loadingNumber > 0 && !params.noLoading) {
-							loading.close();
-							loadingNumber = 0;
-							loading = undefined;
-						}
-						login();
-					} else if (res.code !== '0000') {
-						if (!params.notToast) {
-							Toast(res.desc, 3000);
-						}
-						if (loadingNumber > 0 && !params.noLoading) {
-							loading.close();
-							loadingNumber = 0;
-							loading = undefined;
-						}
-						if (params.errorFuc) {
-							params.errorFuc();
-						}
-					} else {
-						if (!params.keepLoading && loadingNumber > 0 && !params.noLoading) {
-							loading.close();
-							loadingNumber = 0;
-							loading = undefined;
-						}
-						resolve(res.data);
-					}
+					this.handleResponse(params,res);
 				},
 				error(err) {
-					if (loadingNumber > 0) {
-						loading.close();
-						loadingNumber = 0;
-						loading = undefined;
-					}
-					reject(err);
-					if (params.errorFuc) {
-						params.errorFuc();
-					}
+					this.commonErrorHandle(params, err);
 				},
 			});
 		});
 	}
 
-	// eslint-disable-next-line class-methods-use-this
 	get(params) {
 		return new Promise((resolve, reject) => {
 			if (loadingNumber < 1 && !params.noLoading) {
@@ -96,43 +60,54 @@ class Fetch {
 					'x-ac-token-ticket': sessionStorage.getItem('token') || '',
 				},
 				success(res) {
-					if (res.code !== '0000') {
-						if (loadingNumber > 0 && !params.noLoading) {
-							loading.close();
-							loadingNumber = 0;
-							loading = undefined;
-						}
-						if (!params.notToast) {
-							Toast(res.desc, 3000);
-						}
-						if (params.errorFuc) {
-							params.errorFuc();
-						}
-					} else if (config.responseCode.businessError.indexOf(res.code) !== -1) {
-						TPTJS.khtAppRouteRequest('0', '', '0', 'native', 'LogIn');
-					} else {
-						if (loadingNumber > 0 && !params.noLoading) {
-							loading.close();
-							loadingNumber = 0;
-							loading = undefined;
-						}
-						resolve(res.data);
-					}
+					this.handleResponse(params,res);
 				},
 				error(err) {
-					if (loadingNumber > 0) {
-						loading.close();
-						loadingNumber = 0;
-						loading = undefined;
-					}
-					reject(err);
-					if (params.errorFuc) {
-						params.errorFuc();
-					}
+					this.commonErrorHandle(params, err);
 				},
 			});
 		});
 	}
+
+	cleanLoading() {
+		loading.close();
+		loadingNumber = 0;
+		loading = undefined;
+	}
+
+	handleResponse(params, res) {
+		if (config.responseCode.businessError.indexOf(res.code) !== -1) {
+			if (loadingNumber > 0 && !params.noLoading) {
+				this.cleanLoading();
+			}
+			login();
+		} else if (res.code !== '0000') {
+			if (!params.notToast) {
+				Toast(res.desc, 3000);
+			}
+			if (loadingNumber > 0 && !params.noLoading) {
+				this.cleanLoading();
+			}
+			if (params.errorFuc) {
+				params.errorFuc();
+			}
+		} else {
+			if (!params.keepLoading && loadingNumber > 0 && !params.noLoading) {
+				this.cleanLoading();
+			}
+			resolve(res.data);
+		}
+  }
+
+  commonErrorHandle(params, err) {
+    if (loadingNumber > 0) {
+			this.cleanLoading();
+		}
+		reject(err);
+		if (params.errorFuc) {
+			params.errorFuc();
+		}
+  }	
 }
 
 const fetch = new Fetch();
