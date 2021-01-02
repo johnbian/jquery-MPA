@@ -1,7 +1,7 @@
 {
-  "name": "activity-2020",
+  "name": "<%= projectName %>",
   "version": "1.0.0",
-  "description": "tpt activity",
+  "description": "<%= description %>",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

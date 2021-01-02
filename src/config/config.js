@@ -1,25 +1,9 @@
 const ENV = 'SIT';
-// const ENV = 'UAT';
 // const ENV = 'PRO';
 
 const urlList = {
-	SIT: 'https://ecustomer.tp95589.com/sit',
-	UAT: 'https://ecustomer.tp95589.com',
-	// SIT: 'http://localhost:3000/sit',
-	PRO: 'https://ecustomer.cntaiping.com',
-};
-
-const fileUrl = {
-	SIT: 'https://ecustomer.tp95589.com',
-	UAT: 'https://ecustomer.tp95589.com',
-	// SIT: 'http://localhost:8080',
-	// UAT: 'http://localhost:8080',
-	PRO: 'https://ecustomer.cntaiping.com',
-};
-
-const shenceUrl = {
-	SIT: 'https://yhxwtz_test.ft.cntaiping.com:8111/sa?project=tpt_test',
-	PRO: 'https://cd.life.cntaiping.com:8106/sa?project=chinataiping',
+	SIT: 'https://www.easy-mock.com/mock/5a0294396be3e9439ddfdec1/hospital',
+	PRO: 'https://www.easy-mock.com/mock/5a0294396be3e9439ddfdec1/hospital',
 };
 
 const baseUrl = urlList[ENV];
@@ -40,11 +24,9 @@ const isWeixin = uaXZ.indexOf('micromessenger') !== -1;
 export default {
 	responseCode,
 	baseUrl,
-	fileUrl,
 	ENV,
 	isAndroidXZ,
 	isiOSXZ,
 	isWeixin,
-	shenceUrl,
 	isKhtAPP,
 };

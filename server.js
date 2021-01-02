@@ -14,7 +14,7 @@ app.use(webpackDevMiddleware(compiler, {
 	publicPath: config.output.publicPath
 }));
 
-app.use('/sit', proxy('ecustomer.tp95589.com', {
+app.use('/sit', proxy('.com', {
 	https: true,
 	proxyReqPathResolver: function(req) {
 		console.log(`请求的路径：${req.url}`);     //请求的路径：

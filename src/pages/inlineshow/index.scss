@@ -1,29 +1,4 @@
 @import '../style/index.scss';
 .inline-show {
   background-color: #fff;
-  background-image: url('../../assets/images/bg_inline-show_1_compressed.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding-top: 376.94%;
-  overflow-x: hidden;
-  position: relative;
-  .btn-inline {
-    z-index: 2;
-    outline: none;
-    position: absolute;
-    top: 1936px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 0;
-    width: 360px;
-    height: 90px;
-    background-color: transparent;
-  }
-  .bg-img {
-    opacity: 0;
-    position: absolute;
-    height: 100%;
-    width: auto;
-    bottom: 0;
-  }
 }
